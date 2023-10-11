@@ -1,7 +1,10 @@
-@mixin box-shadow ($top, $left, $blur, $transparency, $color) {
-  -webkit-box-shadow: $top, $left, $blur, $transparency, $color;
-  -moz-box-shadow: $top, $left, $blur, $transparency, $color;
-  box-shadow: $top, $left, $b, $transparency, $color;
+$padding: 16px;
+
+@mixin box-shadow {
+  -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+  box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
+
 }
  
 
@@ -35,8 +38,8 @@ body {
         flex-grow: 1;
         flex-basis: 45%;
         border: 1px silver solid;
-        @include box-shadow(10px 10px 19px -4px rgba(255, 255, 255, 0.75));
-        padding: 16px;
+        @include box-shadow;
+        padding: $padding;
         margin: 16px;
         clear: both;
         overflow: auto;
@@ -56,7 +59,7 @@ body {
         margin-bottom: 1.6em;
         max-width: 100%;
         overflow: auto;
-        padding: 16px;
+        padding: $padding;
         display: block;
         white-space: pre-wrap;
       }
@@ -84,29 +87,29 @@ body {
   h6 {
     text-align: center;
     font-size: 2em;
-    padding: 32px;
+    padding: $padding * 2;
     margin-bottom: 0px;
   }
   
-  .message,
-  .success,
-  .error,
-  .warning {
+  .message {
     border: 1px solid #ccc;
-    padding: 16px;
+    padding: $padding;
     margin: 16px;
     color: #2748b3;
     background-color: #000;
   }
   
   .success {
+    @extend .message;
     background-color: green;
   }
   
   .error {
+    @extend .message;
     background-color: red;
   }
   
   .warning {
+    @extend .message;
     background-color: orange;
   }
