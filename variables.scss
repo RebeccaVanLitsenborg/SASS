@@ -1,0 +1,16 @@
+
+@import 'style.css';
+
+$colortext: rgb(220, 56, 56);
+$colorheader: rgb(222, 74, 74);
+
+
+body {
+  color: $colortext;
+}
+
+h1,
+h2,
+h6 {
+  color: $colorheader;
+}
