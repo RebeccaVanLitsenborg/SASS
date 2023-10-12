@@ -1,0 +1,14 @@
+@use 'changes';
+
+.card {
+    body {
+        color: changes.$colortext;
+    }
+    h1,
+    h2,
+    h6 {
+        color: changes.$colorheader;
+    }
+
+}
+
